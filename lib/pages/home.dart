@@ -21,21 +21,21 @@ class HomeScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/demo2');
+                Navigator.pushNamed(context, '/maintainAnimationPage');
               },
-              child: const Text('Demo 2'),
+              child: const Text('Maintain Animation Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/demo3');
+                Navigator.pushNamed(context, '/maintainInteractivityPage');
               },
-              child: const Text('Demo 3'),
+              child: const Text('Maintain Interactivity Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/demo4');
+                Navigator.pushNamed(context, '/maintainSemanticsPage');
               },
-              child: const Text('Demo 4'),
+              child: const Text('Maintain Semantics Page'),
             ),
           ],
         ),

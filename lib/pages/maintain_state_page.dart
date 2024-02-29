@@ -49,7 +49,7 @@ class _MaintainStatePageState extends State<MaintainStatePage> {
                 itemCount: 100, // 長いリストを生成
                 itemBuilder: (context, index) {
                   return ListTile(
-                    title: Text('利用規約 $index'),
+                    title: Text('利用規約的な文章 $index'),
                   );
                 },
               ),
