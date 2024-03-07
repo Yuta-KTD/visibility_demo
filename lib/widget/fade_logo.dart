@@ -10,6 +10,7 @@ class FadeLogo extends StatefulWidget {
 class _FadeLogoState extends State<FadeLogo>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
+  int _counter = 0;
 
   @override
   void initState() {
@@ -20,7 +21,9 @@ class _FadeLogoState extends State<FadeLogo>
     );
     _animationController.forward();
     _animationController.addListener(() {
-      print('Animation value: ${_animationController.value}');
+      setState(() {
+        _counter++;
+      });
     });
   }
 
@@ -31,6 +34,9 @@ class _FadeLogoState extends State<FadeLogo>
   }
 
   void _restartAnimation() {
+    setState(() {
+      _counter = 0;
+    });
     _animationController.reset();
     _animationController.forward();
   }
@@ -44,13 +50,15 @@ class _FadeLogoState extends State<FadeLogo>
           opacity: _animationController,
           child: const FlutterLogo(size: 200.0),
         ),
-
-        const SizedBox(height: 20), // ボタン間のスペースを追加
-        Text('Is animating: ${_animationController.isAnimating}'),
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: _restartAnimation,
           child: const Text('Restart Animation'),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          '_counter: $_counter',
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ],
     );

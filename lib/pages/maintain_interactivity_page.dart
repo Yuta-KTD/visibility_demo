@@ -47,7 +47,7 @@ class MaintainInteractivityPageState extends State<MaintainInteractivityPage> {
                 visible: _isButtonVisible,
                 child: ElevatedButton(
                   onPressed: _incrementCounter,
-                  child: const Text('Increment Counter'),
+                  child: const Text('Increment'),
                 ),
               ),
               const SizedBox(height: 20),

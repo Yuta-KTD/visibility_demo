@@ -8,7 +8,8 @@ class MaintainAnimationPage extends StatefulWidget {
   State<MaintainAnimationPage> createState() => _MaintainAnimationPageState();
 }
 
-class _MaintainAnimationPageState extends State<MaintainAnimationPage> {
+class _MaintainAnimationPageState extends State<MaintainAnimationPage>
+    with SingleTickerProviderStateMixin {
   bool _isVisible = true;
 
   void _toggleVisibility() {
@@ -22,7 +23,7 @@ class _MaintainAnimationPageState extends State<MaintainAnimationPage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Visibility Demo'),
+          title: const Text('Maintain Animation Demo'),
         ),
         body: Center(
           child: Column(
@@ -30,11 +31,7 @@ class _MaintainAnimationPageState extends State<MaintainAnimationPage> {
               Visibility(
                 visible: _isVisible,
                 maintainState: true,
-                maintainAnimation: true,
-                child: const FadeLogo(),
-              ),
-              TickerMode(
-                enabled: _isVisible,
+                maintainAnimation: false,
                 child: const FadeLogo(),
               ),
               const SizedBox(height: 20),
