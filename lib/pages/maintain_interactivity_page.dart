@@ -38,7 +38,10 @@ class MaintainInteractivityPageState extends State<MaintainInteractivityPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text('カウンター'),
-              Text('$_counter'),
+              Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
               Visibility(
                 maintainSize: true, // maintainAnimation: trueが必要
                 maintainAnimation: true, // maintainState: trueが必要
